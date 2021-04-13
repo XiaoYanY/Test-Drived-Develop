@@ -1,6 +1,6 @@
 ## TDD编程
 
-- 2021年3月31日 tdd分享 ----移动的小车（分支：share/mobilCar）
+- 2021年3月31日 tdd分享 ----移动的小车（分支：share/mobileCar）
 - 2021年4月7日 webpack学习 react静态页面脚手架搭建（分支：learn/webpack）
 - 2021年4月 未完成 
 
