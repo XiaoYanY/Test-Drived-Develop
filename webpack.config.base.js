@@ -9,10 +9,34 @@ module.exports = {
         filename: '[name].bundle.js',  
     },  
     mode: 'development',
+    module:{
+      rules:[
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          use: {
+            loader: "babel-loader"
+          }
+        },
+        {
+          test:/\.css$/,
+          exclude: path.resolve(__dirname, 'node_modules'),
+          use:[
+            'style-loader',
+            'css-loader'
+          ]
+        },
+        {
+          test:/\.gif|jpe?g|png|svg|ico$/,
+          exclude: path.resolve(__dirname, 'node_modules'),
+          use:'url-loader'
+        },
+      ]
+    },
     plugins:[
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        title:'我学习的webpack',
+        title:'I Learning to Webpack',
         filename:'index.html',
         template:path.resolve(__dirname,'public/index.html')
       })
