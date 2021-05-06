@@ -3,7 +3,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {  
-    entry: path.resolve(__dirname, 'src/index.js'),  
+    entry:path.resolve(__dirname, 'src/index.js'),
     output: {  
         path: path.resolve(__dirname, 'dist'),  
         filename: '[name].bundle.js',  
@@ -27,7 +27,7 @@ module.exports = {
           ]
         },
         {
-          test:/\.gif|jpe?g|png|svg|ico$/,
+          test:/\.gif|jpe?g|png|svg$/,
           exclude: path.resolve(__dirname, 'node_modules'),
           use:'url-loader'
         },
@@ -38,7 +38,8 @@ module.exports = {
       new HtmlWebpackPlugin({
         title:'I Learning to Webpack',
         filename:'index.html',
-        template:path.resolve(__dirname,'public/index.html')
-      })
+        template:path.resolve(__dirname,'public/index.html'),
+        favicon: './public/favicon.ico' //favicon.ico文件路径
+      }),
     ]
 }; 
